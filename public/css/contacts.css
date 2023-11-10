@@ -1,0 +1,48 @@
+body{
+    background-color: #f6f7fb;
+}
+.contacts{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+  
+}
+table{
+    border-collapse: collapse;
+} 
+td, th {
+    border: 1px solid black;
+    padding: 8px;
+}
+.btns{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+a{
+    color: white;
+}
+.btn-1{
+    border-radius: 10px;
+    background-color: gray;
+    padding: 10px;
+    margin-left: 10px;
+}
+.btn-2{
+    border-radius: 10px;
+    background-color: green;
+    padding: 10px;
+    margin-left: 10px;
+}
+
+
+.delete-btn{
+    border-radius: 10px;
+    background-color: red;
+    padding: 12px;
+    margin-left: 10px;
+    border: 0;
+    color: white;
+}

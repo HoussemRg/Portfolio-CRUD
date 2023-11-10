@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href=" /css/style.css" />
+</head>
+<body>
+    <header id="header">
+        <div class="overlay overlay-lg">
+            <img src=" /img/shapes/square.png" class="shape square" alt="" />
+            <img src=" /img/shapes/circle.png" class="shape circle" alt="" />
+            <img
+            src=" /img/shapes/half-circle.png"
+            class="shape half-circle1"
+            alt=""
+            />
+            <img
+            src=" /img/shapes/half-circle.png"
+            class="shape half-circle2"
+            alt=""
+            />
+            <img src=" /img/shapes/x.png" class="shape xshape" alt="" />
+            <img src=" /img/shapes/wave.png" class="shape wave wave1" alt="" />
+            <img src=" /img/shapes/wave.png" class="shape wave wave2" alt="" />
+            <img src=" /img/shapes/triangle.png" class="shape triangle" alt="" />
+            <img src=" /img/shapes/points1.png" class="points points1" alt="" />
+        </div>
+        <nav>
+            <div class="container">
+            <div class="logo">
+                <img src=" /img/houssemLogo.png" alt="" />
+            </div>
+
+            <div class="links">
+                <ul>
+                <li>
+                    <a href="/#header">Home</a>
+                </li>
+                <li>
+                    <a href="/#services">Services</a>
+                </li>
+                <li>
+                    <a href="/#portfolio">Portfolio</a>
+                </li>
+                <li>
+                    <a href="/#about">About</a>
+                </li>
+                
+                <li>
+                    <a href="/#contact">Contact Me</a>
+                </li>
+                <li>
+                    <a href="./contacts">Contacts</a>
+                </li>
+                <li>
+                    <a href="/#contact" class="active">Hire me</a>
+                </li>
+                </ul>
+            </div>
+
+            <div class="hamburger-menu">
+                <div class="bar"></div>
+            </div>
+            </div>
+        </nav>
+        
+    </header>
+    <div class="edit">
+      <form action="/edit/<%= res._id %>?_method=PUT" method="post">
+            <div class="contact-form">
+              
+              <div class="row">
+                <input
+                  type="text"
+                  value="<%= res.firstName %>"
+                  name="firstName"
+                  class="contact-input"
+                  placeholder="First Name"
+                />
+                <input
+                  type="text"
+                  value="<%= res.lastName %>"
+                  name="lastName"
+                  class="contact-input"
+                  placeholder="Last Name"
+                />
+              </div>
+    
+              <div class="row">
+                <input type="text" value="<%= res.phoneNumber %>" name="phoneNumber" class="contact-input" placeholder="Phone" />
+                <input type="email" value="<%= res.email %>" name="email" class="contact-input" placeholder="Email" />
+              </div>
+    
+              <div class="row">
+                <textarea
+                
+                  name="message"
+
+                  class="contact-input textarea"
+                  placeholder="Message"
+                ><%= res.message %></textarea>
+              </div>
+              
+                <button type="submit" class="btn">Update</button>
+                
+            </div>
+          </form>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Contacts</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href=" /css/style.css" />
+    <link rel="stylesheet" href=" /css/contacts.css" />
+</head>
+<body>
+    <header id="header">
+        <div class="overlay overlay-lg">
+            <img src=" /img/shapes/square.png" class="shape square" alt="" />
+            <img src=" /img/shapes/circle.png" class="shape circle" alt="" />
+            <img
+            src=" /img/shapes/half-circle.png"
+            class="shape half-circle1"
+            alt=""
+            />
+            <img
+            src=" /img/shapes/half-circle.png"
+            class="shape half-circle2"
+            alt=""
+            />
+            <img src=" /img/shapes/x.png" class="shape xshape" alt="" />
+            <img src=" /img/shapes/wave.png" class="shape wave wave1" alt="" />
+            <img src=" /img/shapes/wave.png" class="shape wave wave2" alt="" />
+            <img src=" /img/shapes/triangle.png" class="shape triangle" alt="" />
+            <img src=" /img/shapes/points1.png" class="points points1" alt="" />
+        </div>
+        <nav>
+            <div class="container">
+            <div class="logo">
+                <img src=" /img/houssemLogo.png" alt="" />
+            </div>
+
+            <div class="links">
+                <ul>
+                <li>
+                    <a href="/#header">Home</a>
+                </li>
+                <li>
+                    <a href="/#services">Services</a>
+                </li>
+                <li>
+                    <a href="/#portfolio">Portfolio</a>
+                </li>
+                <li>
+                    <a href="/#about">About</a>
+                </li>
+                
+                <li>
+                    <a href="/#contact">Contact Me</a>
+                </li>
+                <li>
+                    <a href="./contacts">Contacts</a>
+                </li>
+                <li>
+                    <a href="/#contact" class="active">Hire me</a>
+                </li>
+                </ul>
+            </div>
+
+            <div class="hamburger-menu">
+                <div class="bar"></div>
+            </div>
+            </div>
+        </nav>
+        
+    </header>
+    <div class="contacts">
+        <% if (arr.length===0) { %>
+        <h1>No Data Found</h1>
+        <% } %>
+        <% if (arr.length>0) { %>
+            <table>
+                <tr>
+                    <th>First Name</th>
+                    <th>Second Name</th>
+                    <th>Email</th>
+                    <th>Last Update</th>
+                    <th>Informations</th>
+                </tr>
+                <% arr.forEach(user => { %>
+                    <tr>
+                        <td><%= user.firstName %></td>
+                        <td><%= user.lastName %></td>
+                        <td><%= user.email %></td>
+                        <td><%= moment(user.updatedAt).fromNow() %></td>
+                        <td class="btns">
+                            <a href="/view/<%= user._id %>" class="btn-1">View</a>
+                            <a href="/edit/<%= user._id %>" class="btn-2">Edit</a>
+                            <form action="/contacts/<%= user._id %>?_method=DELETE" method="post">
+                                <button type="submit" class="delete-btn">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                <% }) %>
+                
+            </table>
+        <% } %>
+         
+        
+    </div>
+</body>
+</html>
