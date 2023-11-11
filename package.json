@@ -7,6 +7,9 @@
     "start": "node index.js",
     "watch": "nodemon --ext *"
   },
+  "engines": {
+    "node": "18.x"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -19,5 +22,8 @@
     "moment": "^2.29.4",
     "mongoose": "^8.0.0",
     "nodemon": "^3.0.1"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.0.0"
   }
 }
