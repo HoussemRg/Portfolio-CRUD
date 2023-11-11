@@ -25,7 +25,7 @@ liveReloadServer.server.once("connection", () => {
 });
 
 app.post('/',(req,res) => {
-  console.log(req.body);
+  
   let userData=new User(req.body);
   userData.save().then(() => {
     res.redirect('/');
