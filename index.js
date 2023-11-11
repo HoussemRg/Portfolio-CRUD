@@ -92,7 +92,8 @@ app.put('/edit/:id',(req,res) => {
   )
 }
 )
-
+/*
+mongodb+srv://houssem:3oEue2UTT78hoOr5@cluster0.l226tg4.mongodb.net/all-data?retryWrites=true&w=majority
 mongoose.connect("mongodb://127.0.0.1:27017/users")
 .then(() => {
   app.listen(port,() => {
@@ -106,3 +107,17 @@ mongoose.connect("mongodb://127.0.0.1:27017/users")
 }
 )
 
+*/
+
+mongoose.connect("mongodb+srv://houssem:3oEue2UTT78hoOr5@cluster0.l226tg4.mongodb.net/all-data?retryWrites=true&w=majority")
+.then(() => {
+  app.listen(port,() => {
+    console.log(`http://localhost:${port}`);
+    console.log("connected to database");
+  }
+  )
+}
+).catch((err) => {
+  console.log(err);
+}
+)
