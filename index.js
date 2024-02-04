@@ -1,6 +1,6 @@
 const express=require("express");
 const app=express();
-const port = 3002;
+const port = process.env.PORT || 3002
 const mongoose = require('mongoose');
 app.use(express.urlencoded({extended:true}));
 const User=require('./models/userSchema');
@@ -13,6 +13,7 @@ const path = require("path");
 const livereload = require("livereload");
 const liveReloadServer = livereload.createServer();
 liveReloadServer.watch(path.join(__dirname, 'public'));
+require('dotenv').config();
 
 
 const connectLivereload = require("connect-livereload");
@@ -92,26 +93,12 @@ app.put('/edit/:id',(req,res) => {
   )
 }
 )
-/*
-mongodb+srv://houssem:3oEue2UTT78hoOr5@cluster0.l226tg4.mongodb.net/all-data?retryWrites=true&w=majority
-mongoose.connect("mongodb://127.0.0.1:27017/users")
+
+
+mongoose.connect(process.env.DB_URI)
 .then(() => {
   app.listen(port,() => {
-    console.log(`http://localhost:${port}`);
-    console.log("connected to database");
-  }
-  )
-}
-).catch((err) => {
-  console.log(err);
-}
-)
-
-*/
-
-mongoose.connect("mongodb+srv://houssem:3oEue2UTT78hoOr5@cluster0.l226tg4.mongodb.net/all-data?retryWrites=true&w=majority")
-.then(() => {
-  app.listen(port,() => {
+    
     console.log(`http://localhost:${port}`);
     console.log("connected to database");
   }
